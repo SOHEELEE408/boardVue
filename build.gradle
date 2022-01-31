@@ -1,0 +1,48 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id "com.github.node-gradle.node" version '2.2.0'
+    id 'java'
+}
+
+node{
+    version='16.13.2'
+    npmVersion = '8.1.2'
+    workDir = file('./src/frontend')
+    npmWorkDir = file('./src/frontend')
+    nodeModulesDir=file('./src/frontend')
+}
+
+group = 'com'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+    maven {url "https://plugins.gradle.org/m2/"}
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+task setUp(type: NpmTask){
+    description = 'Install Node.js packages'
+    args = ['install']
+    inputs.files file('package.json')
+    outputs.files file('node_modules')
+}
+
+task buildFrontEnd(type: NpmTask, dependsOn: setUp){
+    description = 'Build vue.js'
+    args=['run', 'build']
+}
+
+processResources.dependsOn 'buildFrontEnd'
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
