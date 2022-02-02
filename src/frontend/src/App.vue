@@ -1,28 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import request from "request"
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
-  mounted(){
-    request('http://localhost:8080/api/hello', function (error, response, body){
-      window.console.log('error:',error);
-      window.console.log('statusCode:', response && response.statusCode);
-      window.console.log('body:', body);
-    })
-  }
+
 }
 </script>
 
-<style>
+<!--
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,4 +20,19 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+#nav{
+  padding:30px;
+}
+
+#nav a{
+  font-weight: bold;
+  color:#2c3e50;
+}
+
+router-link-exact-active{
+  color:#42b983;
+}
 </style>
+-->
+
