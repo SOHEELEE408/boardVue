@@ -7,8 +7,8 @@ import com.boardvue.web.dto.PostsSaveRequestDto;
 import com.boardvue.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -25,6 +25,11 @@ public class PostsService {
         Posts posts = postsRepository.findById(id).orElseThrow(()->new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
         posts.update(requestDto.getTitle(), requestDto.getContent());
         return id;
+    }
+
+    public List<Posts> findAll(){
+        List<Posts> contents = postsRepository.findAll();
+        return contents;
     }
 
     public PostsResponseDto findById(Long id){
