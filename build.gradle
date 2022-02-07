@@ -34,7 +34,7 @@ dependencies {
 
 
 }
-
+/*
 task setUp(type: NpmTask){
     description = 'Install Node.js packages'
     args = ['install']
@@ -48,7 +48,7 @@ task buildFrontEnd(type: NpmTask, dependsOn: setUp){
 }
 
 processResources.dependsOn 'buildFrontEnd'
-
+*/
 tasks.named('test') {
     useJUnitPlatform()
 }
