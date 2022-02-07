@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <input v-model="msg" placeholder="여기를 수정해보세요" />
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -33,8 +34,10 @@
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  data(){
+    return{
+      msg: ''
+    }
   }
 }
 </script>
