@@ -59,6 +59,11 @@
 <script>
 export default {
   name: "PostsReg",
+  props:{
+    post:{
+      type: Function
+    }
+  },
   data(){
     return{
       disabled:true
@@ -66,6 +71,7 @@ export default {
   },
   methods:{
     regPosts(){
+      this.post('test')
       let params={
         "author":this.author,
         "title":this.title,
