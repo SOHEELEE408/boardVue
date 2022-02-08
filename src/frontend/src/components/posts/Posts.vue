@@ -24,7 +24,7 @@
                   query:{id:slotProps.row.id}
                  }"
                            class="btn btn-sm btn-primary">
-                <i class="fa fa-search"/>
+                🔎
               </router-link>
             </td>
           </template>

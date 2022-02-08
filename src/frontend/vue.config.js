@@ -5,7 +5,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/api' : {
-                target:'https://vue-board-w-boot.herokuapp.com/',
+                target:'http://localhost:9000',
                 ws: true,
                 changeOrigin:true
             },
