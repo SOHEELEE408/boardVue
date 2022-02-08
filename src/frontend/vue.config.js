@@ -10,5 +10,7 @@ module.exports = {
                 changeOrigin:true
             },
         }
-    }
+    },
+    lintOnsave:false,
+    productionSourceMap:false
 }
