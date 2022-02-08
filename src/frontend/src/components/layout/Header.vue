@@ -3,7 +3,7 @@
     <div class="navbar navbar-dark bg-dark shadow-sm mb-3">
       <div class="container d-flex justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-right">
-          <strong class="text-right">Platform</strong>
+          <strong class="text-right">Vue Board</strong>
         </a>
       </div>
     </div>

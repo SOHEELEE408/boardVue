@@ -59,11 +59,6 @@
 <script>
 export default {
   name: "PostsReg",
-  props:{
-    post:{
-      type: Function
-    }
-  },
   data(){
     return{
       disabled:true
@@ -71,13 +66,12 @@ export default {
   },
   methods:{
     regPosts(){
-      this.post('test')
       let params={
         "author":this.author,
         "title":this.title,
         "content":this.content,
       }
-      this.axios.post('http://localhost:8080/api/v1/posts',
+      this.axios.post('http://localhost:9000/api/v1/posts',
       JSON.stringify(params), {headers:{'content-type':'application/json'}}
       ).then(res=>{
         alert("새 글이 등록되었습니다. \n 글번호: ["+res.data+"]")

@@ -73,7 +73,7 @@ export default {
       this.getPosts(params)
     },
     getPosts(params){
-      this.axios.get("http://localhost:8080/api/v1?"+params)  // 게시글: this.axios.get("http://127.0.0.1:8080/posts?" + params)
+      this.axios.get("http://localhost:9000/api/v1?"+params)  // 게시글: this.axios.get("http://127.0.0.1:8080/posts?" + params)
       .then(res=>{
         this.posts=res.data.content
         this.cnt=res.data.totalElements

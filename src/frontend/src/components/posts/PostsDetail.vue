@@ -105,7 +105,7 @@ export default {
       this.disabled=false
     },
     getPosts(){
-      this.axios.get('http://localhost:8080/api/v1/posts/'+this.param.id)
+      this.axios.get('http://localhost:9000/api/v1/posts/'+this.param.id)
       .then(res=>{
         this.posts=res.data
       }).catch(e=>{
@@ -119,7 +119,7 @@ export default {
         "title":this.posts.title,
         "content":this.posts.content,
       }
-      this.axios.put('http://localhost:8080/api/v1/posts/'+this.param.id,
+      this.axios.put('http://localhost:9000/api/v1/posts/'+this.param.id,
       JSON.stringify(params), {headers:{'content-type': 'application/json'}}
       ).then(res=>{
         console.log(res.data)
@@ -130,7 +130,7 @@ export default {
       })
     },
     delPosts(){
-      this.axios.delete('http://localhost:8080/api/v1/posts/'+this.param.id
+      this.axios.delete('http://localhost:9000/api/v1/posts/'+this.param.id
       ).then(res=>{
         console.log(res.data)
         alert("삭제되었습니다.")

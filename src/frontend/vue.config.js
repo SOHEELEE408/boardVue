@@ -11,6 +11,5 @@ module.exports = {
             },
         }
     },
-    lintOnsave:false,
     productionSourceMap:false
 }
